@@ -17,7 +17,7 @@ final class PedestrianWay extends HighWay
      */
     public function addVehicle(Vehicle $vehicle)
     {
-        if ($vehicle instanceof Car || $vehicle instanceof Truck)
+        if ($vehicle instanceof Bike || $vehicle instanceof Skateboard)
         {
             $this->addCurrentVehicles($vehicle);
         } else {

@@ -16,12 +16,7 @@ final class ResidentialWay extends HighWay
      */
     public function addVehicle(Vehicle $vehicle)
     {
-        if ($vehicle instanceof Car || $vehicle instanceof Truck)
-        {
-            $this->addCurrentVehicles($vehicle);
-        } else {
-            return 'go back buddy, you\'re not allowed !';
-        }
+                    $this->addCurrentVehicles($vehicle);
     }
 
 }
