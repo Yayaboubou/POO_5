@@ -14,7 +14,9 @@ $citroen = new Car ('red', 5, 'hybrid');
 $autoroute68 = new MotorWay();
 $autoroute68->addVehicle($renault);
 $autoroute68->addVehicle($citroen);
+$renault->switchOn();
 var_dump($autoroute68);
+
 
 
 $gitane = new Bike('blue', 2);
