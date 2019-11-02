@@ -1,8 +1,8 @@
 <?php
 require_once 'Vehicle.php';
-require_once 'lightable.interface.php';
+require_once 'LightableInterface.php';
 
-class Bike extends Vehicle implements Lightable
+class Bike extends Vehicle implements LightableInterface
 {
     /**
      * @var bool

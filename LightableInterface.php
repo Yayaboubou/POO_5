@@ -1,7 +1,7 @@
 <?php
 
 
-interface Lightable {
+interface LightableInterface {
 
     /**
      * @return bool
