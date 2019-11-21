@@ -1,38 +1,30 @@
 <?php
 
-require_once 'Vehicle.php';
-require_once 'LightableInterface.php';
-
-class Car extends Vehicle implements LightableInterface
+class Car
 {
+    /**
+     * @var
+     */
+    private $energy;
 
-    protected $energy;
-    protected $energyLevel;
-    protected $light;
+    /**
+     * @var bool
+     */
+    private $hasParkBreak = true;
 
-
-    public function __construct(string $color, int $nbSeats, string $energy)
+    /**
+     * Car constructor.
+     * @param string $energy
+     */
+    public function __construct(string $energy)
     {
-        parent::__construct($color, $nbSeats);
         $this->setEnergy($energy);
     }
 
-    /**
-     * @return bool
-     */
-    public function switchOn(): bool
-    {
-        return $this->light = true;
-    }
-    /**
-     * @return bool
-     */
-    public function switchOff(): bool
-    {
-        return $this->light = false;
-    }
 
-
+    /**
+     * @return string
+     */
     public function getEnergy(): string
     {
         return $this->energy;
@@ -42,15 +34,22 @@ class Car extends Vehicle implements LightableInterface
         $this->energy = $energy;
     }
 
-    public function getEnergyLevel(): int
+    /**
+     * @param bool $hasParkBrake
+     */
+    public function setParkBrake(bool $hasParkBrake)
     {
-        return $this->energyLevel;
-    }
-    public function setEnergyLevel(int $energyLevel) : void
-    {
-        $this->energyLevel = $energyLevel;
+        $this->hasParkBreak = $hasParkBrake;
     }
 
+    /**
+     * @throws Exception
+     */
+    public function start(): void
+    {
+        if ($this->hasParkBreak)
+            throw new Exception("Attention frein à mein serré !");
+    }
 
 
 }
