@@ -48,7 +48,7 @@ class Car
     public function start(): void
     {
         if ($this->hasParkBreak)
-            throw new Exception("Attention frein à mein serré !");
+            throw new Exception("Attention frein à main serré !");
     }
 
 
