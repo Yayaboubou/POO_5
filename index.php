@@ -1,5 +1,6 @@
 <?php
 require_once 'Car.php';
+require_once 'Speedometer.php';
 
 $renault = new Car ('diesel');
 
@@ -14,3 +15,5 @@ try {
 
 var_dump($renault);
 
+
+echo Speedometer::convertKmToMiles(10);
